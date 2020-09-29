@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="Ethan Sylvia ">
-    <meta name="description" content="homepage">
+    <meta name="description" content="about page">
     <title>Ethan Sylvia</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/aboutStyle.css" />
 
 </head>
 <nav class="nav">
     <div class="container">
         <div class="logo">
-            <a href="#">Ethan Sylvia</a>
+            <a href="index.html">Ethan Sylvia</a>
         </div>
         <div id="mainListDiv" class="main_list">
             <ul class="navlinks">
@@ -21,33 +21,27 @@
                 <li><a href="mailto:ethans24@uw.edu">Contact</a></li>
             </ul>
         </div>
-        <span class="navTrigger">
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
     </div>
 </nav>
 
 <section class="home">
 </section>
-<div style="height: 500px">
+<div style="height: 1000px">
+    <!-- just to make scrolling effect possible -->
         <h2 class="myH2">Ethan Sylvia</h2>
         <p class="myP">
-            I'm an undergraduate studying Informatics at the University of Washington Information School, where
-            I am concentrating in Human-Computer Interaction and Data Science, and minoring in Education, Learning, and Societies. I am currently a member of the Julie Kientz
-            research group I am a teachers assistant for INFO 201: Technical Foundations this Autumn quarter.
+            Hello!
         </p>
 
         <p class="myP">    
-        My research interest include designing and researching technical-based solutions that support students
-        facing barriers in their computing education
         </p>
 </div>
 
+<!-- Jquery needed -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/scripts.js"></script>
 
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
 <script>
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
