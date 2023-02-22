@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="styles.css">   
+    </head>
+
+    <body>
+
+
+        <div class="navbar">
+            <a class="name" href="#home">Ethan Sylvia</a>
+            <div class="navbar-right">
+                <a href="./gallery.html">Gallery Page</a>
+                <a href="./cheatsheet.html">Cheat Sheet</a>
+                <a href="./about.html">About Me</a>
+
+                <div class="dropdown">
+                    <button class="dropdownbtn"> 
+                        Writeups 
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="./MP0.html">MP0</a>
+                        <a href="./MP1.html">MP1</a>
+                        <a href="./MP2.html">MP2</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class = content>
+            <h1>MP1 Writeup</h1>
+            
+            <div class= "writeupdiv"> 
+                <h2>Overview</h2>
+
+                <p>
+                    For MP1 I decided to build a tool that can identify inaccessible
+                    HTML code. The three main functions of the tool is identifying images
+                    without alt text, identifying input elements without a corresponding label element,
+                    and identifying paragraph elements with a contrat ratio less than 3.5 with it's background
+                    color.  
+                </p>
+
+                <p>
+                    Once an inaccessible element is "identified", it receives a bright
+                    red border or a red text color. The main purpose of this tool is to help
+                    developers ensure websites they code are accessible. The following WCAGs
+                    were cited 
+                </p>
+
+
+                <ul>
+                    <li>https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html</li>
+                    <li>https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html</li>
+                    <li>https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html</li>
+                </ul>
+                <img src="./mp1.gif">
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Process</h2>
+                
+                <p>
+                    Below roughly lays out the process I followed:
+                </p>
+
+                <ul>
+                    <li>build the html popup with two different input types: checkboxes and a button</li>
+                    <li>establish a connection between the popup script and the content script</li>
+                    <li>build the methods to find inaccessible images, text, and forms</li>
+
+                </ul>
+
+                
+
+
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Issue Deep Dive</h2>
+
+                <p>
+                    The issue I probably spent the longest time trying to figure out was how to grab the color styles
+                    from a element with the DOM. I needed to do this in my text contrast method in order to compare
+                    the colors between text elements and their background. I tried to access the color by using
+                    element.style.color, which didn't work. I spent like 1-2 hours googling until I found out element.style
+                    only refers to inline styling, and elements styled in a CSS file would need to be called with getComputedStyle(element).getPropertyValue('') instead.
+                    
+                    
+                </p>
+
+
+            </div>
+
+
+            <div class= "writeupdiv"> 
+                <h2>Ideas & Future</h2>
+
+                <ul>
+                    <li>Test for additional WCAGs</li>
+                    <li>Output a report.html file that gives specific feedback about what lines of code are incorrect</li>
+                    <li>Build a nicer popup GUI that can easily scale for more inputs</li>
+                    <li>Perform more testing to find edge cases that might cause bugs</li>
+
+                </ul>
+
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Kudos</h2>
+
+                <p>
+                    <a href="https://www.w3.org/TR/WCAG20-TECHS/G17.html">This</a> link was used to implement
+                    the formula for determening color contrast between two colors.
+                    
+                </p>
+
+                <p>
+                    <a href="https://github.com/ethans24/mp1">The extension</a> can be found here.
+                    
+                </p>
+
+            </div>
+
+            <h2>Extension Test</h2>
+
+            <form>
+                <input type="checkbox" id="Alt" name="Alt">
+            </form>
+            <p class = "bad" id = "bad">
+                I am inaccessible text
+            </p>
+            <img src="Frame 11.png">
+
+        </div>
+
+
+    </body>
+</html>

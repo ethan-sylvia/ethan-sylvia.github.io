@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="styles.css">   
+    </head>
+
+    <body>
+
+      <div class="navbar">
+        <a class="name" href="#home">Ethan Sylvia</a>
+        <div class="navbar-right">
+            <a href="./gallery.html">Gallery Page</a>
+            <a href="./cheatsheet.html">Cheat Sheet</a>
+            <a href="./about.html">About Me</a>
+
+            <div class="dropdown">
+                <button class="dropdownbtn"> 
+                    Writeups 
+                </button>
+                <div class="dropdown-content">
+                    <a href="./MP0.html">MP0</a>
+                    <a href="./MP1.html">MP1</a>
+                    <a href="./MP2.html">MP2</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <div class = content>
+            <h1>CHEAT SHEAT</h1>
+
+
+            <h2 class>Dropdown Button</h2>
+
+            <table>
+                <caption>Steps needed</caption>
+                <tr>
+                  <th>CSS</th>
+                  <th style="width:70%">Explanation</th>
+                </tr>
+                <tr>
+                  <td> .dropdown .dropdownbtn{
+                    font-family: Roboto, 'sans-serif';
+                    font-size: 16px;
+                    border: none;
+                    outline: none;
+                    color: #1A1B1F;
+                    padding: 14px 16px;
+                    background-color: white;
+                }</td>
+                  <td>This is the CSS used to style the dropdown button so that
+                    it looks like a normal link on the navbar.
+                  </td>
+                </tr>
+                <tr>
+                  <td>.dropdown-content{
+                    display: none;
+                    position: fixed;
+                    background-color: #f9f9f9;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    z-index: 1;
+                }</td>
+                  <td>This is the CSS used to style the container of the links. I made the background of
+                    the container a light grey color so it is distinct from the white webpage.
+                    The position must be fixed so when the hover state is initiated the container stays
+                    "fixed" in it's position underneath the button. 
+                  </td>
+                </tr>
+                <tr> 
+                  <td>.dropdown:hover .dropdown-content {
+                    display: block;
+                }</td>
+                  <td>This sets the display so the link container is visible once a user hovers over the button
+                  </td>
+                </tr>
+              </table> 
+
+
+
+        </div>
+
+
+
+    </body>
+</html>

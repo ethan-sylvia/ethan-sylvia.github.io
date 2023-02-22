@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="styles.css">   
+    </head>
+
+    <body>
+
+        <div class="navbar">
+            <a class="name" href="#home">Ethan Sylvia</a>
+            <div class="navbar-right">
+                <a href="./gallery.html">Gallery Page</a>
+                <a href="./cheatsheet.html">Cheat Sheet</a>
+                <a href="./about.html">About Me</a>
+
+                <div class="dropdown">
+                    <button class="dropdownbtn"> 
+                        Writeups 
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="./MP0.html">MP0</a>
+                        <a href="./MP1.html">MP1</a>
+                        <a href="./MP2.html">MP2</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class = content>
+            <h1>MP0 Writeup</h1>
+            
+            <div class= "writeupdiv"> 
+                <h2>Overview</h2>
+
+                <p>
+                    My process for building this website
+                </p>
+
+                <ul>
+                    <li>Build the navbar</li>
+                    <li>Copy styles from my current portfolio</li>
+                    <li>Build pages asked for in the spec</li>
+                    <li>Google when confused</li>
+                </ul>
+
+                <p>
+                    I have prior experience with using HTMl/CSS but it's been a long time, so I decided to 
+                    build the navbar first to reintroduce basic web dev concepts.
+                </p>
+
+                <p>
+                    I have prior experience with using HTMl/CSS but it's been a long time, so I decided to 
+                    build the navbar first to reintroduce basic web dev concepts.
+                </p>
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Issue</h2>
+
+                <p>
+                    The part I struggled with for the longest while building
+                    the website was a bug I had with my dropdown menu. I knew
+                    I needed to have the dropdown containers display value change
+                    when the dropdown button was hovered, but the bug below happened
+                </p>
+
+                <img src="./errorgif.gif">
+
+                <p>
+                    After some time googling on stackoverflow, I determined the issue 
+                    was due to the containers height shifting the navbar links up, when I needed the container to grow in a downwards direction, under the button. I fixed this by setting position: fixed because
+                    this forces the container to stay in it's current spot, even if it's height changes.
+                </p>
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>CSS Transition</h2>
+
+                <p>
+                    I used a dropdown menu element to be used for my CSS transition. I chose this because I wanted
+                    my navbar to include a section for my writeups, and since there will be more than one writeup 
+                    this can let me easily add more links in the future. I made this work by styling the writeups button to 
+                    look like the other links in the navbar. I then set display: none for the link container because I didn't 
+                    want users to see it until they hover over the link, which changes the display: block.  
+                    
+                </p>
+                <img src="./transition.gif">
+
+
+            </div>
+
+
+            <div class= "writeupdiv"> 
+                <h2>Ideas & Future</h2>
+
+                <p>
+                    My actual portfolio is still a WIP, so some of these ideas for the future include 
+                    work 
+                    
+                </p>
+
+
+                <ul>
+                    <li>Build out my project pages</li>
+                    <li>Mockups for the visual design of the pages, which could be used as a guide for future implementation</li>
+                    <li>Personal logo that can be used in the navbar</li>
+                    <li>Add a dropdown menu button for my projects in the navbar</li>
+                </ul>
+
+            </div>
+            
+        </div>
+
+
+
+    </body>
+</html>
