@@ -78,26 +78,8 @@
                     <li>Fix miscellaneous bugs</li>
                 </ul>
 
-                <p>
-                    I created the foundation of my tetris game in sketch 4, which can be seen below.
-                </p>
 
 
-
-
-                <img src="./sketch4.gif">
-
-                <p>
-                    The first step thing I needed to do for this was create blocks that spawn randomly along the 
-                    screens x-axis that fall by themself. After falling off the screen, my program needed to save the
-                    properties of the block so I could continue drawing them, and then I needed to spawn new blocks. After this,
-                    I created keyboard controls to allow the user to move the blocks via arrow keys.
-                </p>
-
-                <p>
-                    I expanded upon this sketch in sketch7, where I created a grid to facilitate the tetris game. Currently I'm working
-                    on sketch 7 to allow blocks that reach the bottom of the screen to stack on top of eachother.
-                </p>
 
                 
 
@@ -108,29 +90,43 @@
             <div class= "writeupdiv"> 
                 <h2>Issue Deep Dive</h2>
 
+                <img src="./bug.gif">
                 <p>
-                    I think the most difficult part of my tetris game was figuring out the schema I would use to store information
-                    about blocks because each tetris "block" in my game is actually made up of several rectangle items. I also
-                    need to store the color of the block so my program could remember what to draw it as. My first instinct
-                    was to create a Block class that would store an individual rectangle in a custom linked list data structure, but trying to
-                    implementing this seemed needlesly complex. I instead decided to store this information in an array of dictionarys. All the tetris blocks
-                    were stored in an array called AllBlocks. Individual blocks would be stored as a dictionary, with a field for color and a field for 
-                    an array of dictionaries. Each dictionary represents the coordinates for the individual rectangles used to make the whole block.
+                    One issue I ran into was fixing a bug where players could move their Tetris block 
+                    outside of the grid (shown above). This involved creating some conditional statements to determine 
+                    the block starting coordinates & ending coordinates and comparing it to the coordinates of the grid. This was fairly easy to achieve
+                    as my units are consistent throughout the program, as all rectangles are the same size.
+
+                    The issue I spent the most time debugging was figuring out how to handle events in my React. Originally, I used a library
+                    called p5-react-wrapper, but it had really poor documentation on how to acheive this. I eventually switched to using p5-react 
+                    and I was eventually able to re-implement the keyboard controls.
                 </p>
 
 
             </div>
 
+            <p>
+                I think I have implemented almost all the basic functionality of Tetris, besides allowing blocks to rotate. 
+                As I mentioned earlier, I'm planning on continuing to work on this gmae for my final project, and my end goal 
+                is to record player statistics and build additional features that leverage this data, which could include.
+            </p>
 
             <div class= "writeupdiv"> 
                 <h2>Ideas & Future</h2>
-
                 <p>
-                    I'm working on making my tetris game at least somewhat functional. Right now I'm using a 2d array as a
-                    representation of the game board to easily track which grid spaces are taken up by the blocks so additional blocks
-                    are able to stack on eachother.
-
+                    I think I have implemented almost all the basic functionality of Tetris, besides allowing blocks to rotate. 
+                    As I mentioned earlier, I'm planning on continuing to work on this gmae for my final project, and my end goal 
+                    is to record player statistics and build additional features that leverage this data, which could include:
                 </p>
+    
+                <ul>
+                    <li>Implement a high-fidelity tetris UI</li>
+                    <li>Build a login feature for users to sign up</li>
+                    <li>Store data about individual users in persistent storage</li>
+                    <li>Build a user data schema to store relevent information</li>
+                    <li>Allow players to view personal statistics across all the games they have played</li>
+                    <li>Leaderboards showing top players across a variety of statistics</li>
+                </ul>
 
             </div>
 
