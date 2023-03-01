@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="styles.css">   
+    </head>
+
+    <body>
+
+
+        <div class="navbar">
+            <a class="name" href="./frontpage.html">Ethan Sylvia</a>
+            <div class="navbar-right">
+                <a href="./gallery.html">Gallery Page</a>
+                <a href="./cheatsheet.html">Cheat Sheet</a>
+                <a href="./about.html">About Me</a>
+
+                <div class="dropdown">
+                    <button class="dropdownbtn"> 
+                        Writeups 
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="./MP0.html">MP0</a>
+                        <a href="./MP1.html">MP1</a>
+                        <a href="./MP2.html">MP2</a>
+                        <a href="./MP3.html">MP3</a>
+                        <a href="./FP0.html">FP0</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class = content>
+            <h1>FP0 Writeup</h1>
+            
+            <div class= "writeupdiv"> 
+
+                <p>
+                    For my final project, I plan on building an online Tetris game where
+                    players could create an account and view statistics pertaining to the 
+                    tetris games they have played. I've listed the features I plan on implementing 
+                    below in order of importance.
+                </p>
+
+                <h2>Rotating Tetris Blocks</h2>
+                <p>
+                    The last feature core feature of Tetris that my game lacks so far 
+                    are controls for allowing blocks to rotate. Currently, the pattern for which
+                    I generate blocks is completely random. I plan to change this to instead create a data type to store 
+                    information about all the different possible block combinations I want my Tetris game to choose, and then when I generate new blocks 
+                    I will randomly choose one of these combinations. I'm planning to do this because if there are only
+                    a small number of block combinations that can be generated, it will be fairly easy to make a function to handle
+                    rotating for these specific block combinations.
+                </p>
+
+                <h2>Improved Tetris UI</h2>
+                <p>
+                    Currently, my tetris UI is very barebones. I plan to improve it by centering the tetris grid, 
+                    and also by having information about the score of the current game that's being played. I'm also 
+                    planning on doing some digital mockups on Figma to brainstorm different ways to make this visually appealing 
+                </p>
+
+                <h2>Firebase Authentication</h2>
+                <p>
+                    For persistent storage of user login information and also player statistics, I plan on leveraging 
+                    Firebase to allow for user authentication.
+                </p>
+
+                <h2>Leaderboards & Statistics Page</h2>
+                <p>
+                    I'm planning on creating a page to allow users to view statistics about the games they've played,
+                    and also for a leaderboard to rank the top users for certain categories. This page would also include 
+                    buttons for starting a tetris game, signing up, and logging in.
+                </p>
+
+
+
+            </div>
+
+          </div>
+        
+
+    </body>
+</html>
