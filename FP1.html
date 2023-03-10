@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="styles.css">   
+    </head>
+
+    <body>
+
+
+        <div class="navbar">
+            <a class="name" href="./frontpage.html">Ethan Sylvia</a>
+            <div class="navbar-right">
+                <a href="./gallery.html">Gallery Page</a>
+                <a href="./cheatsheet.html">Cheat Sheet</a>
+                <a href="./about.html">About Me</a>
+
+                <div class="dropdown">
+                    <button class="dropdownbtn"> 
+                        Writeups 
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="./MP0.html">MP0</a>
+                        <a href="./MP1.html">MP1</a>
+                        <a href="./MP2.html">MP2</a>
+                        <a href="./MP3.html">MP3</a>
+                        <a href="./FP0.html">FP0</a>
+                        <a href="./FP1.html">FP1</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class = content>
+            <h1>FP1 Writeup</h1>
+            
+            <div class= "writeupdiv"> 
+                <h2>Overview</h2>
+
+                <p>
+                    For my final project, I am iterating on the tetris game I started for
+                    mp3/mp2. Currently, users are able to sign into an account and play tetris. 
+                    The link for the application can be found <a href = "https://ethans244.github.io">here</a>. 
+                </p>
+
+
+                <img src="./FP1gif2.gif">
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Process</h2>
+                
+                <p>
+                    I planned to start my development process by coding a nice looking UI and also finishing
+                    some features that are available in the regular tetris game. After a conversation with Hannah,
+                    I decided to switch the order of features that I was planned in FP0,
+                    and instead focus majority of my time on this assignment setting up firebase. I also had to spend
+                    quite a bit of time debugging issues that were still in my tetris game. For firebase, I succeeded in 
+                    allowing users to sign in with google authentication and also querying the firestore database 
+                    to insert user information. For debugging my tetris game, there wasn't really a process that I followed,
+                    but I succeeded by printing out information about the game state for each iteration of draw(), and 
+                    I had a button that would stop the game, which made it very easy for me to identify bug.
+                </p>
+
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Issue Deep Dive</h2>
+
+                <p>
+                    There were two bugs in particular I remembered to record a gif of for discussion.
+                </p>
+
+                <ol>
+                    <li>After the blocks stacked high enough to reach the top of the grid, my code continued to draw blocks 
+                        for a couple turns until a new game finally starts.
+                    </li>
+                    <li>For every game after the first one, a new block for the user would be spawned prematurely
+                        when the previous block still was one square away from any other blocks or the bottom of the grid.
+                    </li>
+                </ol>
+
+                <img src="./FP1gif1.gif">
+
+
+                <p>
+                    It was pretty annoying to figure out what was causing these bugs. The main reason for this was due to having so many 
+                    different methods that being called in draw(). For example, one bug I found was caused by a method that checked the position
+                    of the users current block prior to the draw() method shifting the blocks down but it assumed it was looking at the position
+                    of the block after it was shifted. The debugging tool I built was very useful for analyzing the state of my 2d array grid 
+                    and values of my blocks right when the bug occurred.
+                </p>
+
+                <p>
+                    Another bug I had was due to how I deployed my application with vite & github pages. When I was building my app in my 
+                    local environment I had index.js control the state of my sign in & sign up page, and then I linked the tetris application 
+                    to a separate html file. When I deployed my website, I found out that github-pages could only render information in the index.js & index.html files.
+                    To remedy this, I put my tetris game project in a different repository then my sign in/sign up pages. I'm not sure if it would be fine
+                    to include the tetris game file in the same file as the javascript for signup, or if there is a more effective solution, but I would appreciate
+                    any feedback that could be given on that. Both of the repositories can be found below.
+                </p>
+
+                <ul>
+                    <li><a href="https://github.com/ethans244/tetris-fp1">Tetris</a></l1>
+                    <li><a href="https://github.com/ethans244/ethans244.github.io">Sign in & sign up</a> </l1>
+                </ul>
+
+
+
+            </div>
+
+
+            <div class= "writeupdiv"> 
+                <h2>Ideas & Future</h2>
+                <p>There are still quite a few things I have left to implement. </p>
+                <ol>
+                    <li>For users playing a tetris game, I need to query my firestore database to insert metrics about their play</li>
+                    <li>I want to include some text content on the sign in page to explain the purpose of the app</li>
+                    <li>I want the sign in page to be able to query metrics about the users games that they've played to display to the user</li>
+                    <li>I want the sign in page to also query metrics across all users for a leaderboard table</li>
+                    <li>My tetris blocks still can't rotate, so that's something I want to work on</li>
+                    <li>All the pages need some styling to make them look visually appealing</li>
+
+                </ol>
+
+
+            </div>
+
+            <div class= "writeupdiv"> 
+                <h2>Additional Requirements</h2>
+
+
+                <h3>Project Scope</h2>
+                <p>
+                    I don't feel that my scope for the project has changed. Figuring out vite & firebase were definitely the most
+                    challenging parts of this assignment, but I feel like I mostly have a handle on it now so I don't think
+                    implementing the rest of the features that I have planned for will be out of reach.
+                </p>
+
+                <h3>Time Management</h2>
+                <p>
+                    I definitely spent more time on this that I anticipated. Figuring out the best way to deploy my website 
+                    was definitely the biggest setback, and my solution is really hacky so I'd like to spend more time figuring out 
+                    the ideal deployment process.
+                </p>
+
+                <h3>Implementation plan</h2>
+                <p>
+                    I don't feel that my plan for the rest of the project has changed so far. Majority of my finals are this week 
+                    so I'll have a lot more time to dedicate to this project for next week, so I feel pretty good about finishing up 
+                    what I have left.
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </body>
+</html>
