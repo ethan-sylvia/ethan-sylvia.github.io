@@ -5,34 +5,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">        
         <link rel="stylesheet" href="styles.css">   
+        <link rel="icon" type="image/x-icon" href="./favicon.png">
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     </head>
 
     <body>
 
-        <div class="navbar">
-            <a class="name" href="./frontpage.html">Ethan Sylvia</a>
-            <div class="navbar-right">
-                <a href="./gallery.html">Gallery Page</a>
-                <a href="./cheatsheet.html">Cheat Sheet</a>
-                <a href="./about.html">About Me</a>
+        <div id="nav-placeholder">
 
-                <div class="dropdown">
-                    <button class="dropdownbtn"> 
-                        Writeups 
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="./MP0.html">MP0</a>
-                        <a href="./MP1.html">MP1</a>
-                        <a href="./MP2.html">MP2</a>
-                        <a href="./MP3.html">MP3</a>
-                        <a href="./FP0.html">FP0</a>
-                        <a href="./FP1.html">FP1</a>
-
-                    </div>
-                </div>
-
-            </div>
         </div>
+        
+        <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
         
         <div class = content>
             <h1>ABOUT ME</h1>
